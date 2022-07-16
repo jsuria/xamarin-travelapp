@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TravelRecordApp.NewTravelPage"
+    Title="Add New Traval"
+    >
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Clicked="ToolbarItem_Clicked"
+            Text="Save"></ToolbarItem>
+
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout Margin="10">
+               
+            <Label
+                Text="Share your experience!"
+                HorizontalTextAlignment="Start"
+                Style="{StaticResource pageBodyText}"
+            />
+            <Entry
+                x:Name="experienceTitle"
+                Placeholder="Title..."
+                Keyboard="Text"
+            />
+
+            <Entry
+                x:Name="experienceEntry"
+                Placeholder="Your experience..."
+                Keyboard="Text"
+            />
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>
+

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Update Experience"
+    x:Class="TravelRecordApp.PostDetailPage">
+
+    <!-- action buttons -->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Clicked="ToolbarItem_Update_Clicked"
+           Text="Update">
+        </ToolbarItem>
+        <ToolbarItem
+            Clicked="ToolbarItem_Delete_Clicked"
+           Text="Delete">
+        </ToolbarItem>
+
+    </ContentPage.ToolbarItems>
+
+    <!-- display the update form -->
+    <ContentPage.Content>
+          <StackLayout Margin="10">
+             <Label
+                Text="Updating experience"
+                HorizontalTextAlignment="Start"
+                Style="{StaticResource pageBodyText}"
+            />
+            <Entry
+                x:Name="experienceTitle"
+                Keyboard="Text"
+            />
+
+            <Entry
+                x:Name="experienceEntry"
+                Keyboard="Text"
+            />
+
+
+          </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+

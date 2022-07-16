@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TravelRecordApp.App">
+    <Application.Resources>
+        <!-- predefined colors -->
+        <ResourceDictionary>
+            <Color
+                x:Key="buttonBackgroundBlue">#0082d9</Color>
+            <Color
+                x:Key="buttonTextWhite">#FFFFFF</Color>
+            <Color
+                x:Key="textGray">#878787</Color>
+            <Color
+                x:Key="pageTitleBlack">#000</Color>
+        </ResourceDictionary>
+
+        <Style TargetType="ContentPage">
+            <Setter
+                Property="BackgroundColor"
+                Value="White">
+            </Setter>
+        </Style>
+
+        <Style TargetType="StackLayout">
+             <Setter Property="Margin"
+                    Value="30">
+            </Setter>
+        </Style>
+
+        <!-- button -->
+        <Style TargetType="Button">
+            <Setter
+                Property="BackgroundColor"
+                Value="{StaticResource buttonBackgroundBlue}">
+            </Setter>
+            <Setter
+                Property="TextColor"
+                Value="{StaticResource buttonTextWhite}">
+            </Setter>
+            <Setter Property="Margin"
+                    Value="0,20,0,30">
+            </Setter>
+         </Style>
+
+        <!-- form entry fields -->
+        <Style TargetType="Entry">
+            <Setter Property="Margin"
+                    Value="0,15,0,30">
+            </Setter>
+        </Style>
+
+        <!-- page title -->
+        <Style TargetType="Label" x:Key="pageTitle">
+            <Setter Property="Margin"
+                    Value="0,0,0,15">
+            </Setter>
+            <Setter Property="FontSize"
+                    Value="Title">
+            </Setter>
+            <Setter Property="FontAttributes"
+                    Value="Bold">
+            </Setter>
+            <Setter Property="TextColor"
+                    Value="{StaticResource pageTitleBlack}">
+            </Setter>
+           
+            <Setter Property="HorizontalTextAlignment"
+                    Value="Start">
+            </Setter>
+        </Style>
+
+        <!-- page body text -->
+        <Style TargetType="Label" x:Key="pageBodyText">
+            <Setter Property="Margin"
+                    Value="0,0,0,15">
+            </Setter>
+         
+            <Setter Property="TextColor"
+                    Value="{StaticResource textGray}">
+            </Setter>
+
+            <Setter Property="FontSize"
+                    Value="16">
+            </Setter>
+
+            <Setter Property="LineHeight"
+                    Value="1.25">
+            </Setter>
+        </Style>
+
+        <Style TargetType="Label" x:Key="listText">
+            <Setter Property="Margin"
+                    Value="0,0,0,15">
+            </Setter>
+         
+            <Setter Property="TextColor"
+                    Value="{StaticResource pageTitleBlack}">
+            </Setter>
+
+            <Setter Property="FontSize"
+                    Value="14">
+            </Setter>
+
+            <!--<Setter Property="LineHeight"
+                    Value="1.25">
+            </Setter>-->
+        </Style>
+
+    </Application.Resources>
+</Application>
