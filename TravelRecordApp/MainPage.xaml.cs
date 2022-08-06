@@ -26,6 +26,9 @@ namespace TravelRecordApp
             }
             else
             {
+                // Authentication and tokens should be done here
+                // If successful proceed,
+                // Else show a dialog for failed authentication
                 Navigation.PushAsync(new HomePage());
             }
         }

@@ -2,7 +2,6 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:TravelRecordApp"
     x:Class="TravelRecordApp.MapPage"
     xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
     Title="Map"
@@ -11,19 +10,11 @@
 
     <maps:Map
         x:Name="locationsMap"
+        IsShowingUser="False"
         HorizontalOptions="FillAndExpand"
         VerticalOptions="FillAndExpand"
+        MapType="Street"
         />
 
-    <!--<ContentPage.Content>
-        <StackLayout Margin="10">
-        
-            <Label
-                Text="Geographical location in coordinates"
-                HorizontalTextAlignment="Center"
-                Style="{StaticResource pageBodyText}"
-            />
-            </StackLayout>
-    </ContentPage.Content>-->
 </ContentPage>
 
