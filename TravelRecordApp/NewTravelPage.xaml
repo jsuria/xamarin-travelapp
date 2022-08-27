@@ -32,6 +32,43 @@
                 Placeholder="Your experience..."
                 Keyboard="Text"
             />
+
+            <ListView x:Name="venueListView"
+                      Margin="20, 0"
+                      HorizontalOptions="FillAndExpand"
+                      ItemSelected="venueListView_ItemSelected"
+                      >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />                                    
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <Label Text="{Binding name}"
+                                       FontSize="Small"
+                                       FontAttributes="Bold" />
+                                <Label Grid.Row="1"
+                                       FontSize="Small"                                       
+                                       Text="{Binding location.address}"
+                                       TextColor="{Binding textGray}"
+                                       />
+                                <Label Grid.Column="1"
+                                       FontSize="Small"
+                                       Text="{Binding distance, StringFormat='{0}m'}" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
     

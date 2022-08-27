@@ -16,14 +16,28 @@
     <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
     <PackageReference Include="Xamarin.Forms.Maps" Version="5.0.0.2515" />
     <PackageReference Include="Xam.Plugin.Geolocator" Version="4.5.0.6" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="sqlite-net-pcl" />
     <None Remove="Models\" />
     <None Remove="Xamarin.Forms.Maps" />
     <None Remove="Xam.Plugin.Geolocator" />
+    <None Remove="Helpers\" />
+    <None Remove="Newtonsoft.Json" />
+    <None Remove="Logic\" />
+    <None Remove="Assets\" />
+    <None Remove="Assets\Images\" />
+    <None Remove="Assets\Images\app-logo.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Logic\" />
+    <Folder Include="Assets\" />
+    <Folder Include="Assets\Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\Images\app-logo.png" />
   </ItemGroup>
 </Project>

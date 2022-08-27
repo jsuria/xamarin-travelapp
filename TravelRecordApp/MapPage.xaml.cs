@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Plugin.Geolocator;
 using Plugin.Geolocator.Abstractions;
+using SQLite;
+using TravelRecordApp.Model;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
@@ -25,6 +27,51 @@ namespace TravelRecordApp
             // Center the map at user location once map appears
             // As soon user grants permission
             GetLocation();
+
+            // Get all the posts and display places on the map
+            GetPosts();
+        }
+
+        private void GetPosts()
+        {
+            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+            {
+                // If table already exists, this is ignored
+                conn.CreateTable<Post>();
+                // Gets the posts as a list (LINQ)
+                var posts = conn.Table<Post>().ToList();
+                //postListView.ItemsSource = posts;
+
+                DisplayOnMap(posts);
+            }
+        }
+
+        private void DisplayOnMap(List<Post> posts)
+        {
+            // Go through each post and create a pin
+            foreach(var post in posts)
+            {
+                try
+                {
+                    var pinCoords = new Xamarin.Forms.Maps.Position(
+                    post.Latitude,
+                    post.Longitude
+                );
+
+                    var pin = new Pin()
+                    {
+                        Position = pinCoords,
+                        Label = post.VenueName,
+                        Address = post.Address,
+                        Type = PinType.SavedPin
+                    };
+
+                    locationsMap.Pins.Add(pin);
+                }
+                catch(Exception ex)
+                { }
+                
+            }
         }
 
         protected override void OnDisappearing()
@@ -46,7 +93,6 @@ namespace TravelRecordApp
                 var location = await Geolocation.GetLocationAsync();
 
                 // Get current location changes
-                //var locator = CrossGeolocator.Current;
                 locator.PositionChanged += Locator_PositionChanged;
                 await locator.StartListeningAsync(new TimeSpan(0,1,0), 100);
 

@@ -3,41 +3,55 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:TravelRecordApp"
              x:Class="TravelRecordApp.MainPage"
-             Title="Customer Login"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="DodgerBlue"
              >
 
     <StackLayout>
 
         <!-- LOGO HERE-->
-        <!--<Frame
-            Margin="0,35,0,35"
+        <!-- -->
+        <Frame
+            Margin="0,50,0,50"
             BackgroundColor="Transparent"
+            HeightRequest="180"
             CornerRadius="0"
             HasShadow="False">
-            <Label Text="Logo Here" HorizontalTextAlignment="Center"></Label>
-        </Frame>-->
+            <Image x:Name="imageLogo"
+                   Aspect="AspectFit"                   
+                   HorizontalOptions="FillAndExpand"
+                   />
+        </Frame><!-- -->
 
 
         <!-- admin message -->
+        <!--
         <Label
             Text="Log in to your CUSTOMER ACCOUNT. Contact support@indignant-tech.net for assistance."
             Style="{StaticResource pageBodyText}"
             />
+        -->
 
         <Entry
             x:Name="emailEntry"
             Placeholder="Email address"
             Keyboard="Email"
+            TextColor="Black"
+            PlaceholderColor="Gray"
             />
 
         <Entry
             x:Name="passwordEntry"
             Placeholder="Password"
             IsPassword="True"
+            TextColor="Black"
+            PlaceholderColor="Gray"
             />
 
         <Button x:Name="loginButton"
                 Text="Login"
+                BackgroundColor="White"
+                TextColor="DodgerBlue"
                 Clicked="loginButton_Clicked"
         ></Button>
 

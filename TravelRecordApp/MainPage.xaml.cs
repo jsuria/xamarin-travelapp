@@ -13,6 +13,12 @@ namespace TravelRecordApp
         public MainPage()
         {
             InitializeComponent();
+
+            // Logo image
+            // Need this for passing into image source
+            var assembly = typeof(MainPage);
+
+            imageLogo.Source = ImageSource.FromResource("TravelRecordApp.Assets.Images.app-logo.png", assembly);
         }
 
         void loginButton_Clicked(System.Object sender, System.EventArgs e)
