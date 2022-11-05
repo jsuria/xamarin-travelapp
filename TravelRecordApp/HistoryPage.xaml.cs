@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using SQLite;
 using TravelRecordApp.Model;
 using Xamarin.Forms;
@@ -7,11 +8,16 @@ using Xamarin.Forms;
 namespace TravelRecordApp
 {
     public partial class HistoryPage : ContentPage
-    {
+    {      
         public HistoryPage()
         {
             InitializeComponent();
+
+            var assembly = typeof(MainPage);
+
+            /*imageHistory.Source = ImageSource.FromResource("TravelRecordApp.Assets.Images.bg-history.jpg", assembly);*/
         }
+
 
         // Override the default behaviour
         protected override void OnAppearing()

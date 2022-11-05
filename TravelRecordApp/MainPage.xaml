@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:TravelRecordApp"
+             xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
              x:Class="TravelRecordApp.MainPage"
              NavigationPage.HasNavigationBar="False"
              BackgroundColor="DodgerBlue"
@@ -10,9 +11,8 @@
     <StackLayout>
 
         <!-- LOGO HERE-->
-        <!-- -->
         <Frame
-            Margin="0,50,0,50"
+            Margin="0,50,0,100"
             BackgroundColor="Transparent"
             HeightRequest="180"
             CornerRadius="0"
@@ -21,39 +21,33 @@
                    Aspect="AspectFit"                   
                    HorizontalOptions="FillAndExpand"
                    />
-        </Frame><!-- -->
+        </Frame>
 
-
-        <!-- admin message -->
-        <!--
-        <Label
-            Text="Log in to your CUSTOMER ACCOUNT. Contact support@indignant-tech.net for assistance."
-            Style="{StaticResource pageBodyText}"
-            />
-        -->
-
-        <Entry
+        
+        <material:MaterialTextField
             x:Name="emailEntry"
             Placeholder="Email address"
-            Keyboard="Email"
-            TextColor="Black"
-            PlaceholderColor="Gray"
-            />
+            BackgroundColor="White"            
+            InputType="Email" />
 
-        <Entry
+
+        <material:MaterialTextField
             x:Name="passwordEntry"
-            Placeholder="Password"
-            IsPassword="True"
-            TextColor="Black"
-            PlaceholderColor="Gray"
+            InputType="Password"
+            Placeholder="Password"            
+            BackgroundColor="White"
             />
 
-        <Button x:Name="loginButton"
+        <material:MaterialButton
+                x:Name="loginButton"
+                ButtonType="Flat"
+                Elevation="1"
+                BackgroundColor="DodgerBlue"
+                HeightRequest="70"
                 Text="Login"
-                BackgroundColor="White"
-                TextColor="DodgerBlue"
+                TextColor="White"
                 Clicked="loginButton_Clicked"
-        ></Button>
+                VerticalOptions="Center" />
 
     </StackLayout>
 

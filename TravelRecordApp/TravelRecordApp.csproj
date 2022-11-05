@@ -17,6 +17,7 @@
     <PackageReference Include="Xamarin.Forms.Maps" Version="5.0.0.2515" />
     <PackageReference Include="Xam.Plugin.Geolocator" Version="4.5.0.6" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="XF.Material" Version="1.8.0" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="sqlite-net-pcl" />
@@ -29,6 +30,10 @@
     <None Remove="Assets\" />
     <None Remove="Assets\Images\" />
     <None Remove="Assets\Images\app-logo.png" />
+    <None Remove="XF.Material" />
+    <None Remove="Assets\Images\bg-history.jpg" />
+    <None Remove="Assets\Images\bg-profile.jpg" />
+    <None Remove="Assets\Images\bg-history.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
@@ -39,5 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Assets\Images\app-logo.png" />
+    <EmbeddedResource Include="Assets\Images\bg-profile.jpg" />
+    <EmbeddedResource Include="Assets\Images\bg-history.jpg" />
   </ItemGroup>
 </Project>

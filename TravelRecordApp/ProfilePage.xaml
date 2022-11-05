@@ -3,18 +3,33 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:TravelRecordApp"
+    xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
     x:Class="TravelRecordApp.ProfilePage"
     Title="Profile"
     NavigationPage.HasBackButton="False"
+    NavigationPage.HasNavigationBar="False"
+    BackgroundColor="White"
     >
     <ContentPage.Content>
-        <StackLayout Margin="10">
+        <StackLayout Margin="3">
         
-            <Label
-                Text="User details and description"
-                HorizontalTextAlignment="Center"
-                Style="{StaticResource pageBodyText}"
-            />
+            <material:MaterialCard                                
+                CornerRadius="4"
+                Margin="0"
+                Padding="0"                
+                Elevation="2"
+                HeightRequest="80"
+                HorizontalOptions="FillAndExpand"                
+                VerticalOptions="FillAndExpand">
+                <StackLayout>                    
+                     <Image x:Name="imageProfile"
+                            Aspect="AspectFill"
+                        Scale="1.2"                        
+                        Margin="0,-30,0,0"
+                   />
+                </StackLayout>
+            </material:MaterialCard>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

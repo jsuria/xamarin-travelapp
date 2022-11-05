@@ -40,5 +40,7 @@
 	<string>The app needs access to your location for enhanced user experience.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>The app needs access to your location for enhanced user experience.</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>

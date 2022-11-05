@@ -3,6 +3,8 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="TravelRecordApp.NewTravelPage"
+    xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+    BackgroundColor="White"
     Title="Add New Traval"
     >
 
@@ -14,59 +16,67 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout Margin="10">
-               
-            <Label
-                Text="Share your experience!"
-                HorizontalTextAlignment="Start"
-                Style="{StaticResource pageBodyText}"
-            />
-            <Entry
-                x:Name="experienceTitle"
-                Placeholder="Title..."
-                Keyboard="Text"
-            />
+        <StackLayout Margin="3">
+              
 
-            <Entry
+            <material:MaterialTextField
+                x:Name="experienceTitle"
+                Margin="6"
+                Placeholder="Title..."            
+                BackgroundColor="White"            
+                InputType="Text" />
+
+            <material:MaterialTextField
                 x:Name="experienceEntry"
-                Placeholder="Your experience..."
-                Keyboard="Text"
-            />
+                Margin="6"
+                Placeholder="Your experience..."            
+                BackgroundColor="White"            
+                InputType="Text" />
+          
 
             <ListView x:Name="venueListView"
-                      Margin="20, 0"
+                      SeparatorVisibility="None"
                       HorizontalOptions="FillAndExpand"
+                      RowHeight="90"
                       ItemSelected="venueListView_ItemSelected"
                       >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="Auto" />                                    
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*" />
-                                    <RowDefinition Height="*" />
-                                </Grid.RowDefinitions>
 
-                                <Label Text="{Binding name}"
-                                       FontSize="Small"
-                                       FontAttributes="Bold" />
-                                <Label Grid.Row="1"
-                                       FontSize="Small"                                       
-                                       Text="{Binding location.address}"
-                                       TextColor="{Binding textGray}"
-                                       />
-                                <Label Grid.Column="1"
-                                       FontSize="Small"
-                                       Text="{Binding distance, StringFormat='{0}m'}" />
-                            </Grid>
+                             <ContentView Padding="2">
+                                <Frame
+                                    OutlineColor="AntiqueWhite"
+                                    HasShadow="False"
+                                    Padding="0">                                        
+                                    <StackLayout Orientation="Vertical">
+                                        <Label
+                                            Margin="0,0,0,0"
+                                            Padding="0,-4,0,0"
+                                            FontSize="12"                                            
+                                            Text="{Binding name}"
+                                            TextColor="DodgerBlue"
+                                            VerticalOptions="CenterAndExpand" />
+                                        <Label
+                                            Margin="0,0,0,0"
+                                            Padding="0,-4,0,0"
+                                            Text="{Binding location.address}"
+                                            FontSize="10"
+                                            VerticalOptions="CenterAndExpand" />
+                                        <Label
+                                            Margin="0,0,0,0"
+                                            Padding="0,-4,0,0"
+                                            Text="{Binding distance, StringFormat='{0}m'}"
+                                            FontSize="10"
+                                            VerticalOptions="CenterAndExpand" />
+                                    </StackLayout>                                    
+                                </Frame>
+                                
+                             </ContentView>                 
+
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-
 
             </ListView>
         </StackLayout>

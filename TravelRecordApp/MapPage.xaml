@@ -6,6 +6,7 @@
     xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
     Title="Map"
     NavigationPage.HasBackButton="False"
+    NavigationPage.HasNavigationBar="False"
     >
 
     <maps:Map

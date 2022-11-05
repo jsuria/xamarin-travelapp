@@ -3,19 +3,25 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:TravelRecordApp"
+    xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
     x:Class="TravelRecordApp.HomePage"
     NavigationPage.HasBackButton="False"
+    NavigationPage.HasNavigationBar="False"
+    BarBackgroundColor="White"
+    BarTextColor="DodgerBlue"
+    android:TabbedPage.ToolbarPlacement="Bottom"
     >
-
-    <TabbedPage.ToolbarItems>
+    
+    <!--<TabbedPage.ToolbarItems>
         <ToolbarItem
             Text="New"
             Clicked="ToolbarItem_Clicked"
         ></ToolbarItem>
-    </TabbedPage.ToolbarItems>
+    </TabbedPage.ToolbarItems>-->
 
     <local:HistoryPage Title="History"/>
     <local:MapPage Title="Map"/>
+    <local:NewTravelPage Title="New Travel"/>
     <local:ProfilePage Title="Profile"/>
     
 </TabbedPage>

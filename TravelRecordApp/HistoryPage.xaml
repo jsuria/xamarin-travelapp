@@ -1,26 +1,108 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:TravelRecordApp"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"    
     x:Class="TravelRecordApp.HistoryPage"
-    Title="History"
+    xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
     NavigationPage.HasBackButton="False"
-    >
-     <ContentPage.Content>
-        <StackLayout Margin="10">
+    NavigationPage.HasNavigationBar="False"
+    BackgroundColor="White"
+    Title="My Experiences"
+    >    
+     <ContentPage.Content>        
+        <StackLayout Margin="3">            
 
-            <ListView x:Name="postListView"
-                      ItemSelected="postListView_ItemSelected">
+            <material:MaterialCard
+                BackgroundColor="Navy"
+                BorderColor="LightGray"                
+                CornerRadius="4"
+                Margin="0,0"
+                Padding="0"
+                Elevation="2"
+                HeightRequest="100"
+                HorizontalOptions="FillAndExpand"                
+                >
+                <StackLayout Orientation="Horizontal">
+                    <material:MaterialLabel
+                        FontSize="Title"
+                        FontAttributes="Bold"
+                        TextColor="White"
+                        Text="25 visited"
+                        Margin="0,0,0,0"                        
+                        HorizontalTextAlignment="Start"
+                        HorizontalOptions="StartAndExpand"
+                        VerticalTextAlignment="Center"
+                        />
+                    <material:MaterialButton
+                        CornerRadius="20"                        
+                        BackgroundColor="White"
+                        Text="New +"
+                        FontSize="Small"
+                        TextColor="Navy"
+                        Elevation="2"
+                        WidthRequest="100"
+                        />
+                    <!--<material:MaterialLabel
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        TextColor="White"
+                        Text="31 nearby"
+                        Margin="0,0,0,0"                        
+                        HorizontalTextAlignment="End"
+                        HorizontalOptions="EndAndExpand"
+                        VerticalTextAlignment="Center"
+                        />-->                     
+                </StackLayout>
+            </material:MaterialCard>
+
+             <material:MaterialLabel
+                        FontSize="Medium"
+                        FontAttributes="Bold"
+                        TextColor="DarkBlue"
+                        Text="Places nearby"
+                        Margin="30,20,0,20"                        
+                        HorizontalTextAlignment="Start"
+                        HorizontalOptions="StartAndExpand"
+                        VerticalTextAlignment="Center"
+                        />
+            
+            <ListView x:Name="postListView"                      
+                      SeparatorVisibility="None"
+                      ItemSelected="postListView_ItemSelected"
+                      RowHeight="90"                      
+                      >
+               
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell
-                            Text="{Binding ExperienceTitle}"
-                            TextColor="{StaticResource buttonBackgroundBlue}"
-                            Detail="{Binding Experience}"
-                            ></TextCell>
+                        <ViewCell>
+                          
+                            <ContentView Padding="2">
+                                <Frame
+                                    HasShadow="False"
+                                    BorderColor="LightGray"
+                                    Padding="0">                                        
+                                    <StackLayout Orientation="Vertical">
+                                        <Label
+                                            Margin="0,0,0,0"
+                                            Padding="0,-4,0,0"
+                                            FontSize="14"                                            
+                                            Text="{Binding ExperienceTitle}"
+                                            TextColor="DodgerBlue"
+                                            VerticalOptions="CenterAndExpand" />
+                                        <Label
+                                            Margin="0,0,0,0"
+                                            Padding="0,-4,0,0"
+                                            Text="{Binding Experience}"
+                                            FontSize="12"
+                                            VerticalOptions="CenterAndExpand" />                                        
+                                    </StackLayout>                                    
+                                </Frame>
+                                
+                             </ContentView>
+                        </ViewCell>
+                        
                     </DataTemplate>
-
+                   
                 </ListView.ItemTemplate>
 
             </ListView>
